@@ -102,6 +102,32 @@
     <footer>
         <p>&copy; 2026 Estrategia & Aula. Todos los derechos reservados.</p>
     </footer>
+<script>
+        document.querySelector('.formulario-contacto').addEventListener('submit', function(e) {
+            // 1. Evitamos que la página salte a Make
+            e.preventDefault(); 
+            
+            // 2. Cambiamos el botón visualmente para que el cliente sepa que está cargando
+            const btn = this.querySelector('button');
+            const textoOriginal = btn.innerText;
+            btn.innerText = 'Enviando solicitud...';
 
+            // 3. Enviamos los datos por debajo (modo invisible)
+            fetch(this.action, {
+                method: this.method,
+                body: new FormData(this)
+            }).then(response => {
+                // 4. Qué pasa cuando se envía con éxito:
+                alert('¡Excelente! Hemos recibido su solicitud. El equipo de Estrategia & Aula se pondrá en contacto a la brevedad.');
+                this.reset(); // Limpia los campos del formulario
+                btn.innerText = textoOriginal; // Devuelve el botón a la normalidad
+            }).catch(error => {
+                // 5. Qué pasa si hay un error de internet:
+                alert('Hubo un problema de conexión. Por favor, intente nuevamente.');
+                btn.innerText = textoOriginal;
+            });
+        });
+    </script>
+    
 </body>
 </html>
