@@ -189,7 +189,7 @@
             <h2>Hablemos de<br><em>tu Institución</em></h2>
             <p class="subtitulo">Sin compromiso. Sin burocracia. Solo claridad sobre el riesgo real de tu colegio.</p>
 
-            <form action="https://hook.us2.make.com/wzx45gp99p8y35o2numtae8evim2qnrl" method="POST" class="formulario-contacto">
+            <form id="formulario-contacto" class="formulario-contacto" novalidate>
                 <div class="form-row">
                     <div class="grupo-input">
                         <label for="nombre">Nombre y Cargo</label>
@@ -208,9 +208,104 @@
                     <label for="mensaje">¿Cuál es su principal desafío hoy?</label>
                     <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Ej. Necesitamos actualizar el RICE antes del plazo..."></textarea>
                 </div>
-                <button type="submit" class="btn-principal">Agendar Reunión Estratégica</button>
+                <button type="submit" id="btn-submit" class="btn-principal">Agendar Reunión Estratégica</button>
                 <p class="form-nota">Respuesta en menos de 24 horas hábiles. Sin spam, sin compromisos.</p>
             </form>
+
+            <!-- Estado de confirmación (oculto por defecto) -->
+            <div id="form-confirmacion" class="form-confirmacion" style="display:none;" aria-live="polite">
+                <div class="confirmacion-icono">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                        <circle cx="20" cy="20" r="19" stroke="#C9A84C" stroke-width="1.5"/>
+                        <path d="M12 20L17.5 25.5L28 15" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Mensaje recibido.</h3>
+                <p>Le contactaremos en menos de <strong>24 horas hábiles</strong> para agendar su reunión estratégica.</p>
+                <p class="confirmacion-nombre" id="confirmacion-nombre"></p>
+                <button class="btn-secundario confirmacion-reset" id="btn-reset">← Enviar otro mensaje</button>
+            </div>
+
+            <!-- Estado de error (oculto por defecto) -->
+            <div id="form-error" class="form-error" style="display:none;" aria-live="polite">
+                <p>Hubo un problema al enviar el formulario. Por favor inténtelo nuevamente o escríbanos directamente.</p>
+                <button class="btn-secundario" id="btn-reintentar">Reintentar</button>
+            </div>
+
+            <script>
+            (function() {
+                var form = document.getElementById('formulario-contacto');
+                var btnSubmit = document.getElementById('btn-submit');
+                var confirmacion = document.getElementById('form-confirmacion');
+                var errorDiv = document.getElementById('form-error');
+                var confirmacionNombre = document.getElementById('confirmacion-nombre');
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    // Validación básica
+                    var fields = form.querySelectorAll('[required]');
+                    var valid = true;
+                    fields.forEach(function(f) {
+                        f.classList.remove('input-error');
+                        if (!f.value.trim()) {
+                            f.classList.add('input-error');
+                            valid = false;
+                        }
+                    });
+                    if (!valid) return;
+
+                    // Estado de carga
+                    btnSubmit.disabled = true;
+                    btnSubmit.textContent = 'Enviando...';
+                    btnSubmit.classList.add('btn-loading');
+
+                    var data = new FormData(form);
+
+                    fetch('https://hook.us2.make.com/wzx45gp99p8y35o2numtae8evim2qnrl', {
+                        method: 'POST',
+                        body: data
+                    })
+                    .then(function(res) {
+                        if (!res.ok) throw new Error('Error de red');
+                        // Éxito
+                        var nombre = document.getElementById('nombre').value.trim().split(',')[0];
+                        confirmacionNombre.textContent = nombre ? 'Nos vemos pronto, ' + nombre + '.' : '';
+                        form.style.display = 'none';
+                        errorDiv.style.display = 'none';
+                        confirmacion.style.display = 'flex';
+                        confirmacion.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    })
+                    .catch(function() {
+                        btnSubmit.disabled = false;
+                        btnSubmit.textContent = 'Agendar Reunión Estratégica';
+                        btnSubmit.classList.remove('btn-loading');
+                        form.style.display = 'none';
+                        errorDiv.style.display = 'block';
+                    });
+                });
+
+                // Reset desde confirmación
+                document.getElementById('btn-reset').addEventListener('click', function() {
+                    form.reset();
+                    form.querySelectorAll('.input-error').forEach(function(f) { f.classList.remove('input-error'); });
+                    btnSubmit.disabled = false;
+                    btnSubmit.textContent = 'Agendar Reunión Estratégica';
+                    btnSubmit.classList.remove('btn-loading');
+                    confirmacion.style.display = 'none';
+                    form.style.display = 'block';
+                });
+
+                // Reset desde error
+                document.getElementById('btn-reintentar').addEventListener('click', function() {
+                    errorDiv.style.display = 'none';
+                    form.style.display = 'block';
+                    btnSubmit.disabled = false;
+                    btnSubmit.textContent = 'Agendar Reunión Estratégica';
+                    btnSubmit.classList.remove('btn-loading');
+                });
+            })();
+            </script>
         </div>
     </section>
 
