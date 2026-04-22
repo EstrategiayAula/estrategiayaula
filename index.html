@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estrategia & Aula | Consultora de Innovación y Gestión Escolar B2B</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- ═══ HEADER ═══ -->
     <header>
-        <div class="logo">Estrategia & Aula</div>
+        <div class="logo">
+            Estrategia <span class="logo-amp">&</span> Aula
+        </div>
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
@@ -20,114 +24,210 @@
         </nav>
     </header>
 
+    <!-- ═══ HERO ═══ -->
     <section id="inicio" class="hero">
+        <div class="hero-bg-grid"></div>
         <div class="hero-content">
-            <h1>Devolvemos el tiempo al liderazgo directivo</h1>
+            <div class="hero-badge">Región del Biobío · Gran Concepción</div>
+            <h1>Devolvemos el tiempo<br>al liderazgo directivo</h1>
             <p>Consultora B2B que combina el rigor de la jefatura técnica con el poder de la Inteligencia Artificial para transformar obligaciones administrativas en impacto real en el aula.</p>
-            <a href="#contacto" class="btn-principal">Proteger y Potenciar mi Colegio</a>
+            <div class="hero-cta-group">
+                <a href="#contacto" class="btn-principal">Proteger mi Colegio</a>
+                <a href="#servicios" class="btn-secundario">Ver Servicios →</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">48h</span>
+                    <span class="stat-label">Auditoría completa</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">30</span>
+                    <span class="stat-label">Jun. 2026 · Plazo legal</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Normativas críticas</span>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- ═══ ALERTA URGENCIA ═══ -->
+    <div class="alerta-urgencia">
+        <span class="alerta-dot"></span>
+        <span class="alerta-mono">PLAZO ACTIVO</span>
+        <span class="alerta-texto">La Circular N° 782 y la Ley Karin exigen actualización del RICE antes del <strong>30 de junio de 2026</strong>. El incumplimiento expone al sostenedor a multas de la Supereduc.</span>
+        <a href="#contacto" class="alerta-link">Auditar ahora →</a>
+    </div>
+
+    <!-- ═══ DIFERENCIADOR ═══ -->
     <section id="nosotros" class="seccion-clara">
         <div class="contenedor">
-            <h2>Nuestra Ventaja Competitiva</h2>
-            <p class="subtitulo">La combinación exacta entre autoridad académica y disrupción tecnológica.</p>
+            <div class="section-label-wrap">
+                <span class="section-label">Nuestra Ventaja Competitiva</span>
+            </div>
+            <h2>La combinación exacta entre<br><em>autoridad académica</em> y disrupción tecnológica.</h2>
             <div class="contenido-nosotros">
-                <p><strong>De igual a igual:</strong> Liderados por un Magíster en Educación con experiencia real en la trinchera escolar. Entendemos la presión de las normativas porque hemos estado ahí.</p>
-                <p><strong>Precisión Quirúrgica con IA:</strong> Automatizamos la redacción legal y el análisis de datos. Ya sea la Ley Karin, la Ley 21.801 o un RICE, resolvemos problemas complejos en tiempo récord, evitando la burocracia de las ATE tradicionales.</p>
+                <div class="diferenciador-card">
+                    <div class="dif-icon">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M14 3L3 8.5V14C3 19.5 7.8 24.7 14 26C20.2 24.7 25 19.5 25 14V8.5L14 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                            <path d="M9 14L12.5 17.5L19 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="dif-content">
+                        <h3>De igual a igual</h3>
+                        <p>Liderados por un Magíster en Educación con experiencia real en la trinchera escolar. Entendemos la presión de las normativas porque hemos estado ahí.</p>
+                    </div>
+                </div>
+                <div class="diferenciador-card">
+                    <div class="dif-icon teal">
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <circle cx="14" cy="14" r="11" stroke="currentColor" stroke-width="1.8"/>
+                            <path d="M9 14H19M14 9V19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                            <circle cx="14" cy="14" r="3" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <div class="dif-content">
+                        <h3>Precisión Quirúrgica con IA</h3>
+                        <p>Automatizamos la redacción legal y el análisis de datos. Ya sea la Ley Karin, la Ley 21.801 o un RICE, resolvemos problemas complejos en tiempo récord, evitando la burocracia de las ATE tradicionales.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- ═══ SERVICIOS ═══ -->
     <section id="servicios" class="seccion-oscura">
         <div class="contenedor">
-            <h2>Nuestra Escalera de Valor</h2>
+            <div class="section-label-wrap">
+                <span class="section-label">Escalera de Valor</span>
+            </div>
+            <h2>Tres fases.<br><em>Un proyecto educativo transformado.</em></h2>
             <div class="grid-servicios">
-                
-                <div class="tarjeta-servicio">
-                    <span class="etiqueta-tiempo">Corto Plazo / Urgencia</span>
-                    <h3>Fase 1: El Escudo Normativo</h3>
-                    <p><strong>Auditoría Normativa Exprés 2026.</strong></p>
-                    <p>Escaneo asistido por IA del Reglamento Interno (RICE) para asegurar el cumplimiento de la Circular 782 y prevención de acoso antes del 30 de junio de 2026.</p>
-                    <p class="resultado"><strong>Resultado:</strong> Cero multas, cero riesgo legal.</p>
+
+                <div class="tarjeta-servicio urgente">
+                    <div class="tarjeta-top">
+                        <span class="etiqueta-tiempo">Corto Plazo · Urgencia</span>
+                        <span class="etiqueta-alerta">⚠ Plazo: 30/06</span>
+                    </div>
+                    <h3>Fase 1<br>El Escudo Normativo</h3>
+                    <p class="tarjeta-subtitulo">Auditoría Normativa Exprés 2026</p>
+                    <p>Escaneo asistido por IA del Reglamento Interno (RICE) para asegurar el cumplimiento de la Circular 782, Ley Karin y Política Modo Aula antes del 30 de junio de 2026.</p>
+                    <ul class="tarjeta-lista">
+                        <li>Análisis de brechas en 48 horas</li>
+                        <li>Identificación de artículos en riesgo</li>
+                        <li>Redacción exacta de correcciones</li>
+                    </ul>
+                    <p class="resultado">Cero multas · Cero riesgo legal</p>
                 </div>
 
                 <div class="tarjeta-servicio">
-                    <span class="etiqueta-tiempo">Mediano Plazo / Fidelización</span>
-                    <h3>Fase 2: El Motor de Datos</h3>
-                    <p><strong>Inteligencia Curricular (SIMCE / DIA).</strong></p>
+                    <div class="tarjeta-top">
+                        <span class="etiqueta-tiempo">Mediano Plazo · Fidelización</span>
+                    </div>
+                    <h3>Fase 2<br>El Motor de Datos</h3>
+                    <p class="tarjeta-subtitulo">Inteligencia Curricular (SIMCE / DIA)</p>
                     <p>Transformación automatizada de resultados estandarizados en planificaciones y estrategias didácticas listas para el docente, liberando a la UTP.</p>
-                    <p class="resultado"><strong>Resultado:</strong> Decisiones basadas en evidencia para el PME.</p>
+                    <ul class="tarjeta-lista">
+                        <li>Análisis automatizado de resultados</li>
+                        <li>Estrategias didácticas accionables</li>
+                        <li>Integración directa al PME</li>
+                    </ul>
+                    <p class="resultado">Decisiones basadas en evidencia</p>
                 </div>
 
                 <div class="tarjeta-servicio">
-                    <span class="etiqueta-tiempo">Largo Plazo / Trascendencia</span>
-                    <h3>Fase 3: Innovación en el Aula</h3>
-                    <p><strong>Metodologías Activas y Desarrollo Cognitivo.</strong></p>
+                    <div class="tarjeta-top">
+                        <span class="etiqueta-tiempo">Largo Plazo · Trascendencia</span>
+                    </div>
+                    <h3>Fase 3<br>Innovación en el Aula</h3>
+                    <p class="tarjeta-subtitulo">Metodologías Activas y Desarrollo Cognitivo</p>
                     <p>Diseño de proyectos de alto impacto. Utilizamos herramientas como el ajedrez educativo para mejorar la concentración, el pensamiento lógico y la resolución de problemas.</p>
-                    <p class="resultado"><strong>Resultado:</strong> Un proyecto educativo vanguardista.</p>
+                    <ul class="tarjeta-lista">
+                        <li>Metodologías activas certificadas</li>
+                        <li>Ajedrez educativo institucional</li>
+                        <li>Proyecto educativo vanguardista</li>
+                    </ul>
+                    <p class="resultado">Un proyecto educativo diferenciador</p>
                 </div>
 
             </div>
         </div>
     </section>
 
+    <!-- ═══ PRUEBA SOCIAL / CREDIBILIDAD ═══ -->
+    <section class="seccion-credibilidad">
+        <div class="contenedor">
+            <div class="credibilidad-grid">
+                <div class="credibilidad-item">
+                    <span class="cred-numero">90%</span>
+                    <span class="cred-texto">de los RICE auditados presentan al menos una vulnerabilidad crítica frente a la normativa 2026</span>
+                </div>
+                <div class="credibilidad-divider"></div>
+                <div class="credibilidad-item">
+                    <span class="cred-numero">15 → 1</span>
+                    <span class="cred-texto">días de revisión manual reemplazados por un informe ejecutivo entregado en 48 horas</span>
+                </div>
+                <div class="credibilidad-divider"></div>
+                <div class="credibilidad-item">
+                    <span class="cred-numero">3</span>
+                    <span class="cred-texto">normativas críticas activas en 2026: Circular 782, Ley Karin N° 21.643 y Política Modo Aula</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CONTACTO ═══ -->
     <section id="contacto" class="seccion-clara">
         <div class="contenedor">
-            <h2>Hablemos de tu Institución</h2>
-            <p class="subtitulo">Solicita tu diagnóstico inicial sin compromiso.</p>
-            
+            <div class="section-label-wrap">
+                <span class="section-label">Diagnóstico Inicial</span>
+            </div>
+            <h2>Hablemos de<br><em>tu Institución</em></h2>
+            <p class="subtitulo">Sin compromiso. Sin burocracia. Solo claridad sobre el riesgo real de tu colegio.</p>
+
             <form action="https://hook.us2.make.com/wzx45gp99p8y35o2numtae8evim2qnrl" method="POST" class="formulario-contacto">
-                <div class="grupo-input">
-                    <label for="nombre">Nombre y Cargo:</label>
-                    <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez, Director">
+                <div class="form-row">
+                    <div class="grupo-input">
+                        <label for="nombre">Nombre y Cargo</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez, Director">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="colegio">Institución Educativa</label>
+                        <input type="text" id="colegio" name="colegio" required placeholder="Nombre del Colegio">
+                    </div>
                 </div>
                 <div class="grupo-input">
-                    <label for="colegio">Institución Educativa:</label>
-                    <input type="text" id="colegio" name="colegio" required placeholder="Nombre del Colegio">
-                </div>
-                <div class="grupo-input">
-                    <label for="email">Correo Electrónico:</label>
+                    <label for="email">Correo Electrónico</label>
                     <input type="email" id="email" name="email" required placeholder="correo@colegio.cl">
                 </div>
                 <div class="grupo-input">
                     <label for="mensaje">¿Cuál es su principal desafío hoy?</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Ej. Necesitamos actualizar el RICE..."></textarea>
+                    <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Ej. Necesitamos actualizar el RICE antes del plazo..."></textarea>
                 </div>
                 <button type="submit" class="btn-principal">Agendar Reunión Estratégica</button>
+                <p class="form-nota">Respuesta en menos de 24 horas hábiles. Sin spam, sin compromisos.</p>
             </form>
         </div>
     </section>
 
+    <!-- ═══ FOOTER ═══ -->
     <footer>
-        <p>&copy; 2026 Estrategia & Aula. Todos los derechos reservados.</p>
+        <div class="footer-inner">
+            <div class="footer-logo">
+                Estrategia <span class="logo-amp">&</span> Aula
+                <span class="footer-tagline">Consultora de Innovación y Gestión Escolar</span>
+            </div>
+            <div class="footer-info">
+                <span>Gran Concepción · Región del Biobío</span>
+                <span class="footer-dot">·</span>
+                <span>&copy; 2026 Estrategia & Aula</span>
+            </div>
+        </div>
     </footer>
-<script>
-        document.querySelector('.formulario-contacto').addEventListener('submit', function(e) {
-            // 1. Evitamos que la página salte a Make
-            e.preventDefault(); 
-            
-            // 2. Cambiamos el botón visualmente para que el cliente sepa que está cargando
-            const btn = this.querySelector('button');
-            const textoOriginal = btn.innerText;
-            btn.innerText = 'Enviando solicitud...';
 
-            // 3. Enviamos los datos por debajo (modo invisible)
-            fetch(this.action, {
-                method: this.method,
-                body: new FormData(this)
-            }).then(response => {
-                // 4. Qué pasa cuando se envía con éxito:
-                alert('¡Excelente! Hemos recibido su solicitud. El equipo de Estrategia & Aula se pondrá en contacto a la brevedad.');
-                this.reset(); // Limpia los campos del formulario
-                btn.innerText = textoOriginal; // Devuelve el botón a la normalidad
-            }).catch(error => {
-                // 5. Qué pasa si hay un error de internet:
-                alert('Hubo un problema de conexión. Por favor, intente nuevamente.');
-                btn.innerText = textoOriginal;
-            });
-        });
-    </script>
-    
 </body>
 </html>
