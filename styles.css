@@ -735,6 +735,110 @@ section { padding: 96px 0; }
     letter-spacing: 0.05em;
 }
 
+/* Input con error de validación */
+.grupo-input input.input-error,
+.grupo-input textarea.input-error {
+    border-color: var(--rojo);
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+}
+
+/* Botón en estado de carga */
+.btn-principal.btn-loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+    position: relative;
+}
+
+/* ─── ESTADO CONFIRMACIÓN ─── */
+.form-confirmacion {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 56px 40px;
+    background: var(--navy);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    animation: fadeUp 0.5s ease both;
+}
+
+.confirmacion-icono {
+    margin-bottom: 8px;
+}
+
+.form-confirmacion h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: -0.02em;
+}
+
+.form-confirmacion p {
+    font-size: 0.95rem;
+    color: var(--slate);
+    line-height: 1.7;
+    max-width: 400px;
+}
+
+.form-confirmacion strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.confirmacion-nombre {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--gold-light) !important;
+}
+
+.confirmacion-reset {
+    margin-top: 8px;
+    font-size: 0.82rem;
+    color: var(--slate);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 0;
+    transition: color 0.2s;
+}
+
+.confirmacion-reset:hover {
+    color: var(--white);
+}
+
+/* ─── ESTADO ERROR ─── */
+.form-error {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 32px 40px;
+    background: rgba(192, 57, 43, 0.06);
+    border: 1px solid rgba(192, 57, 43, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeUp 0.4s ease both;
+}
+
+.form-error p {
+    color: var(--slate);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.65;
+}
+
+.form-error .btn-secundario {
+    color: var(--gold);
+    font-size: 0.85rem;
+    padding: 8px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 /* ==========================================================================
    FOOTER
    ========================================================================== */
